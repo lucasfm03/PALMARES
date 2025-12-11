@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sociedade Esportiva Palmares</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo"> <img src="imagens/logo.jpeg" alt="Logo"> </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#reportagens">Reportagens</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <img src="imagens/capa.JPG" class="hero-img" />
+    <div class="hero-text">
+      <h2>SOCIEDADE ESPORTIVA</h2>
+      <h1>PALMARES</h1>
+      <p>Paixão, tradição e união dentro e fora de campo.</p>
+      <a href="#sobre" class="btn">Conheça nossa história</a>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h2>SOBRE NÓS</h2>
+    <div class="sobre-conteudo">
+      <p>A história do Palmares começa em 1986 - ano de copa do mundo - e como de costume, futebol era o assunto nas mesas de bar. E foi em uma dessas mesas que tudo começou. Era meio dia de um sábado - o mês não se sabe ao certo - o bar era o “Jacaré”, localizado na av. Centenário, próximo ao aeroporto de Teresina. Encontravam-se numa mesa, falando de futebol, Aurélio, Nem, Paulo Afonso, Valdenor e “in memorian” Bira e Pery Machado. A discussão era saber quem jogava mais. Então surgiu a proposta de apostarem uma partida de futebol. O jogo foi marcado para a tarde do sábado seguinte, no campo do sanatório Meduna. Entre os fundadores, estes são alguns que também participaram do primeiro jogo: Rubens, Ademilton, Célio, Mauricélio, Fontenele, Dionísio, Waltinho, Laércio, Santana, Itamar, Aquino, Zé Wilson, João Carlos e outros. Após o jogo, a turma se reunia no “boteco” do Sr. Antônio, que ficava em frente ao Meduna, para conversar e, claro, tomar aquela gelada. E foi assim que o grupo surgiu.</p>
+      <img src="imagens/SDC10045.JPG" alt="Imagem sobre nós">
+    </div>
+
+    <div class="infos">
+      <div class="info-bloco">
+        <h3>1986</h3>
+        <span>Fundação</span>
+      </div>
+      <div class="info-bloco">
+        <h3>Atual Presidente</h3>
+        <span>Aucionio Miranda</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="maquina">
+    <h2>MÁQUINA DO TEMPO</h2>
+    <div class="anos">
+      <div class="ano"><h3>2008</h3><img src="imagens/festa200801.jpg"></div>
+      <div class="ano"><h3>2009</h3><img src="imagens/festa200901.jpg"></div>
+      <div class="ano"><h3>2010</h3><img src="imagens/2010.gif"></div>
+      <div class="ano"><h3>2011</h3><img src="imagens/Dez2011_07.jpg"></div>
+      <div class="ano"><h3>2012</h3><img src="imagens/Dez2012_16_380x285.jpg"></div>
+      <div class="ano"><h3>2013</h3><img src="imagens/2013.JPG"></div>
+    </div>
+  </section>
+
+  <section id="reportagens" class="reportagens">
+    <h2>REPORTAGENS</h2>
+    <div class="videos-container">
+      <div class="video-item">
+        <div class="video-thumbnail" style="background-image: url('imagens/video1.jpg');">
+          <a href="https://www.youtube.com/watch?v=xnpqEZ2NejI" target="_blank" class="play-button"></a>
+        </div>
+        <h3>Palmares time amador há mais de 40 anos de fundação.</h3>
+      </div>
+      <div class="video-item">
+        <div class="video-thumbnail" style="background-image: url('imagens/video2.png');">
+          <a href="https://www.youtube.com/watch?v=NogKwb9zapc" target="_blank" class="play-button"></a>
+        </div>
+        <h3>Craques da Sociedade Esportiva Palmares e suas Resenhas.</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="formulario">
+      <h2>CONTATO</h2>
+      <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Motivo do contato" required>
+        <button type="submit">ENVIAR</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Todos os direitos reservados - Sociedade Esportiva Palmares</p>
+  </footer>
+
+  <!-- Modal para exibir imagem em tamanho grande -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img id="modalImage" src="" alt="Imagem ampliada">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
