@@ -38,7 +38,7 @@ Se quiser testar o site localmente no seu computador:
 
 1. Faça **clone** deste repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/lucasfm03/PALMARES.git
 
 ## 🧑‍💻 Autor
 
