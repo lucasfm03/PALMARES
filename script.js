@@ -73,3 +73,64 @@ if (menuToggle) {
     });
   });
 }
+
+// Adiciona controle para "Saiba mais" / abrir seção de história completa
+(function() {
+  const saibaBtn = document.getElementById('saibaMaisBtn');
+  const historia = document.getElementById('historia');
+  const fechar = document.getElementById('fecharHistoria');
+
+  if (!saibaBtn || !historia) return;
+
+  function abrirHistoria(e) {
+    e.preventDefault();
+    historia.classList.add('open');
+    historia.setAttribute('aria-hidden', 'false');
+    saibaBtn.setAttribute('aria-expanded', 'true');
+    // rola a seção para visualização
+    historia.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function fecharHistoria(e) {
+    if (e) e.preventDefault();
+    historia.classList.remove('open');
+    historia.setAttribute('aria-hidden', 'true');
+    saibaBtn.setAttribute('aria-expanded', 'false');
+    // volta a rolar para a seção sobre (opcional)
+    document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  saibaBtn.addEventListener('click', abrirHistoria);
+  if (fechar) fechar.addEventListener('click', fecharHistoria);
+
+  // Fecha ao pressionar Esc
+  document.addEventListener('keydown', function(ev) {
+    if (ev.key === 'Escape' && historia.classList.contains('open')) {
+      fecharHistoria();
+    }
+  });
+})();
+
+(function() {
+  const abrirBtn = document.getElementById('abrirGaleriaBtn');
+  const galeria = document.getElementById('galeria');
+
+  if (!abrirBtn || !galeria) return;
+
+  function toggleGaleria(e) {
+    e.preventDefault();
+    const aberto = galeria.classList.toggle('open');
+    galeria.setAttribute('aria-hidden', String(!aberto));
+    abrirBtn.setAttribute('aria-expanded', String(aberto));
+    abrirBtn.textContent = aberto ? 'Fechar galeria' : 'Abrir galeria';
+    if (aberto) {
+      // rola suavemente para a galeria
+      galeria.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // volta para a seção máquina (opcional)
+      document.querySelector('.maquina')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  abrirBtn.addEventListener('click', toggleGaleria);
+})();

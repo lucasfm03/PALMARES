@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+  --title-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --title-weight-regular: 600;
+  --title-weight-bold: 800;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +36,11 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+
+  /* necessário para que transform/scale funcione corretamente */
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform;
 }
 
 /* Menu toggle (hamburger) */
@@ -88,7 +101,7 @@ header.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .hero-text h1 {
-  font-size: 50px;
+  font-size: 60px;
   margin-top: 5px;
 }
 
@@ -150,6 +163,18 @@ header.nav-open .menu-toggle span:nth-child(3) {
   max-width: 48%;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.sobre-actions {
+  max-width: 1200px;
+  margin: 12px auto; /* menor espaçamento vertical */
+  display: flex;
+  justify-content: center;
+}
+
+/* evita que o margin-top global do .btn empurre o botão aqui */
+.sobre-actions .btn {
+  margin-top: 0;
 }
 
 .infos {
@@ -582,5 +607,331 @@ form button {
   width: 100%;
  
 }
+}
+
+.historia {
+  display: none;
+  padding: 40px 20px;
+  background: #f8f8f8;
+  border-top: 1px solid #e2e2e2;
+}
+
+.historia.open {
+  display: block;
+  animation: fadeSlide 300ms ease;
+}
+
+.historia-conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  line-height: 2.2;
+  text-align: justify;
+}
+
+.historia-conteudo h2 {
+  text-align: center;
+  color: #0a5c2e;
+  margin-top: 48px; /* garante espaço para o botão sem sobrepor o título */
+  margin-bottom: 18px;
+  font-size: 32px;
+}
+
+/* botão centralizado, levemente acima do título */
+.historia .close-historia {
+  display: block;
+  margin: -34px auto 12px; /* sobe o botão e centraliza */
+  padding: 10px 18px;
+  border-radius: 6px;
+  float: none;
+  clear: both;
+  text-align: center;
+}
+
+/* responsivo: reduz o deslocamento negativo em telas menores para não sobrepor */
+@media (max-width: 768px) {
+  .historia-conteudo h2 {
+    margin-top: 36px;
+    font-size: 28px;
+  }
+  .historia .close-historia {
+    margin: -22px auto 10px;
+  }
+}
+
+/* Seção Fundadores */
+.fundadores {
+  padding: 36px 20px;
+  background: transparent;
+}
+
+.fundadores h2 {
+  text-align: center;
+  color: #0a5c2e;
+  font-size: 40px;
+  margin-bottom: 18px;
+}
+
+/* wrapper com overflow escondido */
+.fundadores-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* track: largura baseada no conteúdo, animação linear infinita e contínua */
+.fundadores-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 80px; /* espaçamento significativo entre nomes */
+  padding: 8px 0;
+  white-space: nowrap;
+  will-change: transform;
+  width: max-content; /* garante que o conteúdo duplo ocupe largura suficiente */
+  animation: slideFundadores 20s linear infinite;
+}
+
+/* aumente o tamanho dos nomes */
+.fundadores-track span {
+  font-size: 28px; /* aumento do tamanho */
+  font-weight: 700;
+  color: #1e3b2a;
+  padding: 6px 12px;
+  background: rgba(10,92,46,0.04);
+  border-radius: 6px;
+}
+
+/* animação contínua: como o HTML já duplica os itens, deslocamos 50% para evitar espaço branco */
+@keyframes slideFundadores {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* responsivo: reduz tamanhos e gap em telas menores */
+@media (max-width: 768px) {
+  .fundadores-track {
+    gap: 40px;
+    animation-duration: 14s;
+  }
+  .fundadores-track span {
+    font-size: 22px;
+  }
+  .fundadores h2 {
+    font-size: 26px;
+  }
+}
+
+/* centraliza botão abaixo da máquina */
+.maquina-actions {
+  max-width: 1200px;
+  margin: 18px auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* garante que o botão herde o estilo .btn sem deslocamento extra */
+.maquina-actions .btn { margin-top: 0; }
+
+/* Galeria */
+.galeria {
+  display: none;
+  padding: 36px 20px;
+  background: #fff;
+  border-top: 1px solid #e6e6e6;
+}
+
+.galeria.open {
+  display: block;
+  animation: fadeSlide 260ms ease;
+}
+
+.galeria-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 20px;
+  text-align: center;
+}
+
+.galeria-conteudo h2 {
+  color: #0a5c2e;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* grid responsivo de imagens lado a lado com espaçamento */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* imagens responsivas */
+.galeria-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  border: 4px solid rgba(10,92,46,0.04);
+}
+
+/* reduz altura em telas pequenas */
+@media (max-width: 480px) {
+  .galeria-grid img {
+    height: 140px;
+  }
+}
+
+/* aplicar fonte moderna a títulos, botões e subtítulos */
+h1, h2, h3, h4, h5, h6,
+.hero-text h1, .hero-text h2,
+.sobre h2, .reportagens h2, .video-item h3, .formulario h2, .fundadores h2,
+.info-bloco h3 {
+  font-family: var(--title-font);
+  font-weight: var(--title-weight-bold);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.2px;
+}
+
+/* botões */
+.btn {
+  font-family: var(--title-font);
+  font-weight: var(--title-weight-bold);
+  letter-spacing: 0.4px;
+}
+
+/* subtítulos / textos de destaque */
+.hero-text p,
+.info-bloco span,
+.fundadores-track span,
+.video-link {
+  font-family: var(--title-font);
+  font-weight: var(--title-weight-regular);
+}
+
+/* Animação de zoom para os botões do cabeçalho (links do nav e .btn dentro do header) */
+header nav a,
+header .btn,
+header .menu-toggle {
+  transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms cubic-bezier(.2,.9,.2,1);
+  transform-origin: center;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+}
+
+header nav a:hover,
+header nav a:focus,
+header nav a:focus-visible,
+header .btn:hover,
+header .btn:focus,
+header .btn:focus-visible,
+header .menu-toggle:hover,
+header .menu-toggle:focus {
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  outline: none;
+}
+
+header nav a:active,
+header .btn:active,
+header .menu-toggle:active {
+  transform: scale(0.99);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Lightbox / visualizador */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .22s ease;
+}
+
+/* sem conteúdo visível até abrir */
+.lightbox .lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* conteúdo central */
+.lightbox-content {
+  position: relative;
+  z-index: 10000;
+  max-width: 92%;
+  max-height: 92%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+/* imagem grande */
+.lightbox-content img {
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+  background: #fff;
+  object-fit: contain;
+}
+
+/* legenda */
+.lightbox-caption {
+  color: #fff;
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* botão fechar */
+.lightbox-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #0a5c2e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* abrir */
+.lightbox.open { opacity: 1; pointer-events: auto; }
+
+/* desfocar / escurecer o fundo quando aberto (aplica a principais regiões) */
+.lightbox-open header,
+.lightbox-open .hero,
+.lightbox-open .page-galeria,
+.lightbox-open footer,
+.lightbox-open .sobre,
+.lightbox-open .maquina {
+  filter: blur(6px) brightness(.75);
+  transition: filter .22s ease;
+}
+
+/* ajuste do cursor quando aberto */
+.lightbox.open .lightbox-content img { cursor: zoom-out; }
+
+/* responsivo: reduz sombra/legenda */
+@media (max-width: 520px) {
+  .lightbox-caption { font-size: 14px; }
+  .lightbox-close { top: 6px; right: 6px; font-size: 16px; padding: 6px 8px; }
+  .lightbox-content img { max-height: calc(100vh - 100px); }
 }
 

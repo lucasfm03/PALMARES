@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeria — Palmares</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* estilos específicos da página de galeria */
+    body { background: #f7f7f7; }
+    .page-galeria { padding: 36px 20px; max-width: 1300px; margin: 0 auto; }
+    .page-galeria h1 { text-align: center; color: #0a5c2e; font-family: var(--title-font); margin-bottom: 20px; font-size: 40px; }
+    .galeria-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+    .galeria-grid-page img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      border: 4px solid rgba(10,92,46,0.04);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+    }
+    .galeria-grid-page img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+    /* botão voltar/fechar no topo */
+    .galeria-top { display:flex; justify-content:center; margin-bottom:18px; gap:12px; }
+    .galeria-top .btn { margin-top: 0; }
+    /* responsivo */
+    @media (max-width: 480px){
+      .galeria-grid-page img { height: 140px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-galeria">
+    <div class="galeria-top">
+      <a class="btn" href="index.html">Voltar</a>
+    </div>
+
+    <h1 id="todas">Galeria de Fotos</h1>
+
+    <div class="galeria-grid-page" aria-live="polite">
+      <!-- 50 imagens de exemplo (picsum.photos) com lazy loading -->
+      <img src="imagens/Galeria/01.jpeg" alt="Foto 1" loading="lazy">
+      <img src="imagens/Galeria/02.jpg" alt="Foto 2" loading="lazy">
+      <img src="imagens/Galeria/03.jpeg" alt="Foto 3" loading="lazy">
+      <img src="imagens/Galeria/04.jpeg" alt="Foto 4" loading="lazy">
+      <img src="imagens/Galeria/05.jpeg" alt="Foto 5" loading="lazy">
+      <img src="imagens/Galeria/06.JPG" alt="Foto 6" loading="lazy">
+      <img src="imagens/Galeria/07.jpeg" alt="Foto 7" loading="lazy">
+      <img src="imagens/Galeria/08.jpg" alt="Foto 8" loading="lazy">
+      <img src="imagens/Galeria/09.gif" alt="Foto 9" loading="lazy">
+      <img src="imagens/Galeria/10.gif" alt="Foto 10" loading="lazy">
+      <img src="imagens/Galeria/11.jpg" alt="Foto 11" loading="lazy">
+      <img src="imagens/Galeria/12.jpg" alt="Foto 12" loading="lazy">
+      <img src="imagens/Galeria/13.jpg" alt="Foto 13" loading="lazy">
+      <img src="imagens/Galeria/14.jpeg" alt="Foto 14" loading="lazy">
+      <img src="imagens/Galeria/15.jpeg" alt="Foto 15" loading="lazy">
+      <img src="imagens/Galeria/16.jpeg" alt="Foto 16" loading="lazy">
+      <img src="imagens/Galeria/17.jpeg" alt="Foto 17" loading="lazy">
+      <img src="imagens/Galeria/18.jpeg" alt="Foto 18" loading="lazy">
+      <img src="imagens/Galeria/19.jpeg" alt="Foto 19" loading="lazy">
+      <img src="imagens/Galeria/20.jpeg" alt="Foto 20" loading="lazy">
+      <img src="imagens/Galeria/21.jpeg" alt="Foto 21" loading="lazy">
+      <img src="imagens/Galeria/22.jpeg" alt="Foto 22" loading="lazy">
+      <img src="imagens/Galeria/23.gif" alt="Foto 23" loading="lazy">
+      <img src="imagens/Galeria/24.gif" alt="Foto 24" loading="lazy">
+      <img src="imagens/Galeria/25.gif" alt="Foto 25" loading="lazy">
+      <img src="imagens/Galeria/26.JPG" alt="Foto 26" loading="lazy">
+      <img src="imagens/Galeria/27.JPG" alt="Foto 27" loading="lazy">
+      <img src="imagens/Galeria/28.JPG" alt="Foto 28" loading="lazy">
+      <img src="imagens/Galeria/29.jpg" alt="Foto 29" loading="lazy">
+      <img src="imagens/Galeria/30.jpg" alt="Foto 30" loading="lazy">
+      <img src="imagens/Galeria/31.jpg" alt="Foto 31" loading="lazy">
+      <img src="imagens/Galeria/32.jpg" alt="Foto 32" loading="lazy">
+      <img src="imagens/Galeria/33.jpg" alt="Foto 33" loading="lazy">
+      <img src="imagens/Galeria/34.jpg" alt="Foto 34" loading="lazy">
+      <img src="imagens/Galeria/35.jpg" alt="Foto 35" loading="lazy">
+      <img src="imagens/Galeria/36.jpg" alt="Foto 36" loading="lazy">
+      <img src="imagens/Galeria/37.jpg" alt="Foto 37" loading="lazy">
+      <img src="imagens/Galeria/38.jpg" alt="Foto 38" loading="lazy">
+      <img src="imagens/Galeria/39.jpg" alt="Foto 39" loading="lazy">
+      <img src="imagens/Galeria/40.jpg" alt="Foto 40" loading="lazy">
+      <img src="imagens/Galeria/41.jpg" alt="Foto 41" loading="lazy">
+      <img src="imagens/Galeria/42.jpg" alt="Foto 42" loading="lazy">
+      <img src="imagens/Galeria/43.jpg" alt="Foto 43" loading="lazy">
+      <img src="imagens/Galeria/44.jpg" alt="Foto 44" loading="lazy">
+      <img src="imagens/Galeria/45.jpg" alt="Foto 45" loading="lazy">
+      <img src="imagens/Galeria/46.jpg" alt="Foto 46" loading="lazy">
+      <img src="imagens/Galeria/47.jpg" alt="Foto 47" loading="lazy">
+      <img src="imagens/Galeria/48.jpg" alt="Foto 48" loading="lazy">
+      <img src="imagens/Galeria/49.jpg" alt="Foto 49" loading="lazy">
+      <img src="imagens/Galeria/50.jpg" alt="Foto 50" loading="lazy">
+    </div>
+  </main>
+
+  <!-- Lightbox / modal para visualizar imagem em grande -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Visualizador de imagem">
+    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-content" role="document">
+      <button class="lightbox-close" aria-label="Fechar visualizador">✕</button>
+      <img src="" alt="" id="lightbox-img" />
+      <div id="lightbox-caption" class="lightbox-caption" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script>
+    // abre imagens em lightbox; fecha com clique no overlay, botão ou Esc
+    (function(){
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbCaption = document.getElementById('lightbox-caption');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const backdrop = lightbox.querySelector('.lightbox-backdrop');
+
+      function openLightbox(src, alt){
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCaption.textContent = alt || '';
+        document.body.classList.add('lightbox-open');
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+      }
+
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        document.body.classList.remove('lightbox-open');
+        // limpa src após animação para liberar memória
+        setTimeout(()=> lbImg.src = '', 250);
+      }
+
+      // Delegation: todas as imagens da grade
+      document.querySelectorAll('.galeria-grid-page img').forEach(img=>{
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', ()=> openLightbox(img.src, img.alt));
+      });
+
+      // fechar
+      closeBtn.addEventListener('click', closeLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+      });
+
+      // evita scroll da página quando aberto
+      new MutationObserver(()=> {
+        if(document.body.classList.contains('lightbox-open')) document.body.style.overflow = 'hidden';
+        else document.body.style.overflow = '';
+      }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
+</body>
+</html>
