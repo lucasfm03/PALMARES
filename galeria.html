@@ -18,7 +18,9 @@
     }
     .galeria-grid-page img {
       width: 100%;
-      height: 180px;
+      /* tornar miniatura quadrada */
+      aspect-ratio: 1 / 1;
+      height: auto;
       object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 6px 14px rgba(0,0,0,0.08);
@@ -30,9 +32,13 @@
     /* botão voltar/fechar no topo */
     .galeria-top { display:flex; justify-content:center; margin-bottom:18px; gap:12px; }
     .galeria-top .btn { margin-top: 0; }
-    /* responsivo */
+    /* responsivo: ajustar colunas em telas pequenas */
+    @media (max-width: 768px){
+      .galeria-grid-page { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    }
     @media (max-width: 480px){
-      .galeria-grid-page img { height: 140px; }
+      .galeria-grid-page { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .galeria-grid-page img { aspect-ratio: 1 / 1; }
     }
   </style>
 </head>
