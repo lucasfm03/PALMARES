@@ -1,14 +1,14 @@
 # ⚽ Sociedade Esportiva Palmares
 
 Bem-vindo ao repositório do site **Sociedade Esportiva Palmares**!  
-Este é um site institucional criado com **HTML, CSS e JavaScript**, desenvolvido do zero para apresentar a história, galeria, reportagens e formas de contato com o clube. :contentReference[oaicite:1]{index=1}
+Este é um site institucional criado com **HTML, CSS e JavaScript**, desenvolvido do zero para apresentar a história, galeria, reportagens e formas de contato com o clube. 
 
 ---
 
 ## 📌 Sobre o Projeto
 
 O projeto tem como objetivo mostrar de forma clara e visual a trajetória e valores da **Sociedade Esportiva Palmares**, um clube com tradição e paixão no futebol.  
-Ele é um site estático, responsivo e de fácil navegação para qualquer dispositivo (desktops, tablets e celulares). :contentReference[oaicite:2]{index=2}
+Ele é um site estático, responsivo e de fácil navegação para qualquer dispositivo (desktops, tablets e celulares). 
 
 Principais seções do site:
 
@@ -16,7 +16,7 @@ Principais seções do site:
 **Sobre** – história da fundação e evolução do Palmares.  
 **Galeria** – fotos e imagens relacionadas ao time.  
 **Reportagens** – textos e conteúdos sobre eventos e jogadores.  
-**Contato** – formulário ou informações para entrar em contato. :contentReference[oaicite:3]{index=3}
+**Contato** – formulário ou informações para entrar em contato. 
 
 ---
 
