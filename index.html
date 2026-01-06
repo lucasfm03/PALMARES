@@ -204,11 +204,14 @@ Valdenor Lima: Administrador de Empresas. Atacante de raríssima habilidade e ch
   <section id="contato" class="contato">
     <div class="formulario">
       <h2>CONTATO</h2>
-      <form>
-        <input type="text" placeholder="Nome" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Motivo do contato" required>
+      <form id="contact-form" action="https://formspree.io/f/xzdzlqrg" method="POST">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Motivo do contato" required>
+        <!-- honeypot to reduce spam -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit">ENVIAR</button>
+        <p id="contact-form-message" class="form-message" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -225,6 +228,5 @@ Valdenor Lima: Administrador de Empresas. Atacante de raríssima habilidade e ch
     </div>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>

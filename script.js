@@ -1,14 +1,38 @@
-// Pequeno script para interceptar o envio do formulário
+// Handler para envio do formulário de contato via Formspree (AJAX)
+const contactForm = document.getElementById('contact-form');
 
-const form = document.querySelector("form");
+if (contactForm) {
+  const messageEl = document.getElementById('contact-form-message');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (submitBtn) submitBtn.disabled = true;
+    if (messageEl) messageEl.textContent = 'Enviando...';
 
-  alert("Formulário enviado com sucesso!");
+    const formData = new FormData(contactForm);
 
-  form.reset();
-});
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        if (messageEl) messageEl.textContent = 'Mensagem enviada com sucesso! Obrigado.';
+        contactForm.reset();
+      } else {
+        const data = await response.json().catch(() => ({}));
+        if (messageEl) messageEl.textContent = data?.error || 'Erro ao enviar. Tente novamente mais tarde.';
+      }
+    } catch (err) {
+      if (messageEl) messageEl.textContent = 'Erro de rede. Verifique sua conexão.';
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+}
 
 // Modal para exibir imagens em tamanho grande
 const modal = document.getElementById("imageModal");
